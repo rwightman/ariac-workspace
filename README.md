@@ -9,15 +9,17 @@ The environment is intended to be run within a docker container on a Linux host 
 The workspace folder of the repository is mapped into the /workspace folder in the running container. From the container bash shell, run 'catkin_make install' within /workspace to compile the ROS packages contained within the submodules.
 
 To quickly get up and running:
-1. Build and run container
 
+1. Clone repository and pull submodules
+``` https://github.com/rwightman/ariac-workspace.git```
+
+2. Build and run container
 ```
 docker build -t ariac .
 ./run.sh ariac
 ```
 
-2. Build and launch ros within container
-
+3. Build and launch ros within container
 ```
 cd /workspace
 catkin_make install
@@ -25,6 +27,5 @@ source /workspace/install/setup.sh
 /scripts/launch.sh 
 ```
 
-3. Wait for Gazebo and rviz processes to start
-
+4. Wait for Gazebo and rviz processes to start
 ```rostopic echo /ariac/logical_camera_2```
