@@ -1,0 +1,7 @@
+[submodule "workspace/src/osrf"]
+	path = workspace/src/osrf
+	url = https://bitbucket.org/osrf/ariac.git
+[submodule "workspace/src/ur"]
+	path = workspace/src/ur
+	url = https://github.com/osrf/universal_robot
+	branch = ariac_ur10_moveit_config_kinetic
