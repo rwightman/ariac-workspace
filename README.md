@@ -10,16 +10,21 @@ The workspace folder of the repository is mapped into the /workspace folder in t
 
 To quickly get up and running:
 
-1. Clone repository and pull submodules
-``` https://github.com/rwightman/ariac-workspace.git```
+1\. Clone repository and pull submodules
 
-2. Build and run container
+```
+git clone --recursive https://github.com/rwightman/ariac-workspace.git
+```
+
+2\. In repository root folder, build and run container
+
 ```
 docker build -t ariac .
 ./run.sh ariac
 ```
 
-3. Build and launch ros within container
+3\. From container bash prompt, build and launch ROS ARIAC config
+
 ```
 cd /workspace
 catkin_make install
@@ -27,5 +32,3 @@ source /workspace/install/setup.sh
 /scripts/launch.sh 
 ```
 
-4. Wait for Gazebo and rviz processes to start
-```rostopic echo /ariac/logical_camera_2```
