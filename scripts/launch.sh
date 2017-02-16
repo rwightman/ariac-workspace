@@ -4,5 +4,4 @@ roslaunch --wait ur10_moveit_config ur10_moveit_planning_execution.launch sim:=t
 roslaunch --wait ur10_moveit_config moveit_rviz.launch config:=true &> /output/rviz-mv.txt &
 until rostopic list ; do sleep 1; done
 rosrun rviz rviz -d `catkin_find osrf_gear --share`/rviz/ariac.rviz $> /output/rviz-tf.txt &
-cd /workspace/src/hwl_node/scripts
 #jupyter notebook --ip='*' --NotebookApp.token='' &

@@ -2,3 +2,4 @@ workspace/build/*
 workspace/install/*
 workspace/devel/*
 workspace/src/CMake*
+output/*
