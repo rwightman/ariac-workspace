@@ -16,7 +16,6 @@ ENV CUDNN_VERSION 5
 LABEL com.nvidia.cuda.version="8.0"
 LABEL com.nvidia.cudnn.version="5"
 
-# upgrade not ideal, but ROS image possibly out of date, retry without at some point...
 RUN apt-get update && apt-get install -q -y \
         ros-kinetic-gazebo-ros-pkgs \
         ros-kinetic-gazebo-ros-control \
