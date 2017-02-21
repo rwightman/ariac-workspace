@@ -16,7 +16,15 @@ ENV CUDNN_VERSION 5
 LABEL com.nvidia.cuda.version="8.0"
 LABEL com.nvidia.cudnn.version="5"
 
-RUN apt-get update && apt-get install -q -y \
+# Add OSRF repository so that Gazebo can be upgraded from the ROS Kinetic 7.0 default to 7.5
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial main" > /etc/apt/sources.list.d/gazebo-stable.list && \
+    apt-key adv --fetch-keys http://packages.osrfoundation.org/gazebo.key
+
+# The dist-upgrade is performed to upgrade Gazebo from the initial 7.0 to 7.5 and bring other packages up to date. 
+RUN apt-get update && \
+    apt-get dist-upgrade -y && \
+    apt-get autoremove -y && \
+    apt-get install -q -y \
         ros-kinetic-gazebo-ros-pkgs \
         ros-kinetic-gazebo-ros-control \
         ros-kinetic-ros-controllers \
